@@ -1,51 +1,76 @@
-# ecom-admin
-admin module of ecommerce app using angular frontend .
-
-
 # E-Commerce Platform
 
-A production-oriented, enterprise-grade e-commerce platform built incrementally to learn and demonstrate modern full-stack development practices.
-
-> **Current Phase:** Angular Admin Portal (Mock API)
-
-Future milestones include a React storefront, Spring Boot backend, PostgreSQL, Docker, CI/CD, and AWS deployment.
+> A production-oriented, enterprise-grade e-commerce platform built incrementally to learn modern frontend, backend, DevOps, and cloud engineering through real-world implementation.
 
 ---
 
-# Vision
+## Project Vision
 
-This project is designed to simulate the architecture and development practices used in real production applications.
+This project is **not** intended to be a tutorial or demo application.
 
-The focus is on:
+The goal is to design and build a scalable, maintainable, production-ready e-commerce platform following real software engineering practices.
 
-* Clean Architecture
-* Scalability
-* Maintainability
-* Reusability
-* Enterprise Development Practices
-* Testability
-* CI/CD
-* Cloud Deployment
+The project will evolve in multiple phases:
+
+* Angular Admin Portal
+* React Customer Storefront
+* Spring Boot REST API
+* MYSQL Database
+* Dockerized Infrastructure
+* CI/CD Pipelines
+* AWS Deployment
 
 ---
 
-# Repository Structure
+# Architecture
 
-```text
+This repository follows a **modular monolith** architecture during development.
+
+Initially, all applications live inside a single repository.
+
+```
 ecommerce-platform/
 
-admin-angular/
-customer-react/
-backend-springboot/
-
-docs/
-docker/
-
-.github/
-    workflows/
-
-README.md
+├── admin-angular/
+├── customer-react/
+├── backend-springboot/
+│
+├── docs/
+│   ├── architecture.md
+│   ├── roadmap.md
+│   ├── api-spec.md
+│   └── database.md
+│
+├── docker/
+│
+├── .github/
+│   └── workflows/
+│
+├── README.md
+└── LICENSE
 ```
+
+This allows the frontend, backend, infrastructure, and documentation to evolve together while maintaining a single source of truth.
+
+---
+
+# Current Status
+
+## In Progress
+
+* Angular Admin Portal
+* Mock REST API
+* Production Architecture
+* Documentation
+
+## Planned
+
+* React Storefront
+* Spring Boot Backend
+* mysql
+* Docker
+* GitHub Actions
+* AWS Deployment
 
 ---
 
@@ -77,8 +102,8 @@ README.md
 
 * Reactive Forms
 * Typed Forms
-* Custom Validators
 * FormArray
+* Custom Validators
 
 ## Routing
 
@@ -100,19 +125,31 @@ README.md
 
 ## Testing
 
-* Jasmine / Karma *(or Jest if adopted)*
 * Unit Testing
 * Component Testing
 * Service Testing
 * NgRx Testing
 
-## Mock Backend
+## Backend (Planned)
 
-* JSON Server *(initial phase)*
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* REST API
 
-Later:
+## Database (Planned)
 
-* Spring Boot REST API
+* mysql
+
+## Infrastructure (Planned)
+
+* Docker
+* Docker Compose
+* Nginx
+
+## Cloud (Planned)
+
+* AWS
 
 ---
 
@@ -120,9 +157,10 @@ Later:
 
 * Git
 * GitHub
+* GitHub Desktop
 * GitHub Projects
 * GitHub Issues
-* VS Code
+* Visual Studio Code / Android Studio / Antigravity IDE
 
 ---
 
@@ -138,11 +176,11 @@ Later:
 
 # CI/CD
 
-The project will implement a production-style CI/CD pipeline using GitHub Actions.
+The project will implement an enterprise-style CI/CD pipeline using GitHub Actions.
 
 ## Continuous Integration
 
-* Automatic dependency installation
+* Dependency Installation
 * Linting
 * Unit Tests
 * Build Verification
@@ -152,44 +190,46 @@ The project will implement a production-style CI/CD pipeline using GitHub Action
 
 * Production Build
 * Docker Image Build
-* Docker Image Publish *(future)*
-* Automatic Deployment *(future)*
+* Docker Image Publishing
+* Deployment Automation
 
-## GitHub Actions (Planned)
+## Planned GitHub Actions
 
-* Angular Build Workflow
-* Unit Test Workflow
-* Lint Workflow
-* Pull Request Checks
-* Release Workflow
-* Docker Build Workflow
-* Deployment Workflow
+* Angular Build
+* Unit Tests
+* ESLint
+* Pull Request Validation
+* Release Pipeline
+* Docker Build
+* Deployment Pipeline
 
 ---
 
 # Git Workflow
 
-This project follows a feature branch workflow.
+The project follows a feature branch workflow.
 
-```text
+```
 main
+
 develop
 
 feature/*
+
 bugfix/*
+
 hotfix/*
+
 release/*
 ```
 
-Every feature is developed using Pull Requests before merging.
+Every feature is developed in its own branch and merged using Pull Requests.
 
 ---
 
 # Commit Convention
 
-Examples:
-
-```text
+```
 feat(products): add product management
 
 feat(auth): implement login
@@ -200,45 +240,56 @@ refactor(store): simplify ngrx selectors
 
 test(products): add reducer tests
 
-docs(readme): update project documentation
+docs(readme): update documentation
 
-ci(actions): add Angular build pipeline
+ci(actions): add Angular build workflow
 ```
 
 ---
 
-# Features (Version 1)
+# Features
 
 ## Authentication
 
 * Login
 * Logout
 * Mock JWT
-* Route Guards
 * Refresh Token Simulation
+* Route Guards
+* HTTP Interceptors
+
+---
 
 ## Dashboard
 
-* Sales Overview
-* Revenue
-* Orders
+* Revenue Summary
 * Product Statistics
+* Order Statistics
+* Recent Orders
+* Sales Chart
+
+---
 
 ## Products
 
-* CRUD
+* Product CRUD
 * Search
-* Sort
-* Filters
+* Sorting
 * Pagination
-* Product Images
+* Filtering
 * Categories
+* Product Images
+* Status Management
+
+---
 
 ## Orders
 
 * Order List
 * Order Details
 * Status Updates
+
+---
 
 ## Payments
 
@@ -253,80 +304,153 @@ ci(actions): add Angular build pipeline
 * Responsive Design
 * Dark Mode
 * Accessibility
-* Loading States
-* Skeleton Loaders
-* Error Pages
-* Empty States
+* Loading Indicators
+* Skeleton Screens
 * Toast Notifications
+* Error Handling
+* Empty States
 * Reusable Components
-* Global Error Handling
+* Reusable Dialogs
 
 ---
 
 # Learning Objectives
 
-This project is also intended to gain practical experience with:
-
-* Angular Architecture
-* NgRx
-* SSR & Hydration
-* RxJS
-* Unit Testing
-* Git
-* GitHub
-* GitHub Actions
-* CI/CD
-* Docker
-* Docker Compose
-* Spring Boot
-* Spring Security
-* PostgreSQL
-* REST API Design
-* AWS Deployment
-* Nginx
-* Production Debugging
-* Monitoring & Logging
-* Software Architecture
-* Enterprise Development Practices
-
----
-
-# Future Roadmap
+This project serves as a practical learning platform for modern software engineering.
 
 ## Frontend
 
-* React Customer Store
+* Angular Architecture
+* Signals
+* NgRx
+* RxJS
+* Angular Material
+* Angular CDK
+* Angular SSR
+* Hydration
+* Reactive Forms
+* Angular i18n
+* Unit Testing
 
 ## Backend
 
 * Spring Boot
 * Spring Security
+* REST API Design
 * JWT Authentication
-* PostgreSQL
+* mysql
 
-## Infrastructure
+## DevOps
+
+* Git
+* GitHub
+* GitHub Desktop
+* GitHub Actions
+* CI/CD
+* Docker
+* Docker Compose
+* Nginx
+
+## Cloud
+
+* AWS Deployment
+* Production Hosting
+* Environment Configuration
+
+## Engineering
+
+* Clean Architecture
+* SOLID Principles
+* Modular Design
+* Enterprise Folder Structure
+* API Design
+* Documentation
+* Production Debugging
+
+---
+
+# Roadmap
+
+## Phase 1
+
+* Repository Setup
+* Documentation
+* Angular Project Initialization
+
+## Phase 2
+
+* Authentication
+* Dashboard
+* Products
+* Orders
+* Payments
+
+## Phase 3
+
+* Unit Testing
+* CI/CD
+* Production Optimization
+
+## Phase 4
+
+* React Storefront
+
+## Phase 5
+
+* Spring Boot Backend
+* mysql
+* JWT Authentication
+
+## Phase 6
 
 * Docker
 * Docker Compose
-* GitHub Actions
-* AWS
 * Nginx
 
-## Future Features
+## Phase 7
+
+* AWS Deployment
+
+---
+
+# Future Features
 
 * Discounts
 * Coupons
-* Inventory
+* Inventory Management
 * Reviews
 * Wishlist
 * Notifications
-* Analytics
-* Payment Gateway
-* Cloud Storage
+* Analytics Dashboard
+* Email Service
+* Payment Gateway Integration
+* Cloud Image Storage
 * Redis Caching
 
 ---
 
-# Project Goal
+# Documentation
 
-The objective is to build a scalable, maintainable, production-ready e-commerce platform while learning modern frontend, backend, DevOps, and cloud technologies through real-world implementation rather than isolated tutorials.
+Additional documentation is available in the `/docs` directory.
+
+* Architecture
+* API Specification
+* Database Design
+* Development Roadmap
+
+---
+
+# Project Philosophy
+
+* Build production-quality software.
+* Learn technologies through implementation.
+* Prioritize maintainability over shortcuts.
+* Follow enterprise development practices.
+* Replace the mock backend with a real backend without changing frontend architecture.
+* Keep code clean, modular, testable, and scalable.
+
+---
+
+# License
+
+This project is licensed under the MIT License.
